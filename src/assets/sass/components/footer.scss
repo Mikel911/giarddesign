@@ -1,0 +1,65 @@
+.footer {
+  padding: 80rem 0;
+  background-color: $--black;
+  color: $--grey;
+  &__top {
+    align-items: center;
+  }
+  &__logo path {
+    fill: $--grey;
+  }
+  &__contact-us {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24rem;
+  }
+  &__line{
+    height: 1rem;
+    background-color: $--grey;
+    margin: 62rem 0;
+  }
+  &__bottom-social {
+    display: flex;
+    gap: 48rem;
+  }
+  &__bottom-link {
+    color: $--grey;
+    font: $link-font;
+  }
+  &__bottom-contact {
+    display: flex;
+    justify-content: flex-end;
+    gap: 48rem;
+  }
+  &__copyright {
+    margin-top: 120rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer {
+    padding: 40rem 0;
+
+    &__bottom-social {
+      justify-content: center;
+    }
+
+    &__bottom-contact {
+      margin-top: 16rem;
+      justify-content: center;
+    }
+
+    &__copyright {
+      margin-top: 40rem;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+.footer__contact-us {
+  margin-top: 10rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+}

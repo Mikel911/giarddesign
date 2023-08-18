@@ -1,0 +1,73 @@
+html {
+  font-size: 1px;
+}
+
+.container {
+  max-width: 1287rem;
+  padding: 0 10rem;
+}
+
+body {
+  font: $body-text;
+  color: $black;
+}
+
+.h1 {
+  font: $h1-font;
+}
+
+.h2 {
+  font: $h2-font;
+  margin-top: 12rem;
+}
+
+.h3 {
+  font: $h3-font;
+}
+
+
+.sub-title {
+  font: $sub-title;
+}
+.section-title {
+  margin-top: 16rem;
+}
+
+.link {
+  padding: 12rem 24rem;
+  border-radius: 200rem;
+  text-align: center;
+  color: $--green;
+  font: $link-font;
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 20rem -3rem rgba(0,0,0,0.7);
+  }
+}
+
+.--bg-green {
+  background-color: $--green;
+  color: $--grey;
+}
+
+.--br-green {
+  border: 1rem solid $--green;
+  color: $--green;
+}
+
+.--bg-greey {
+  background-color: $--grey;
+}
+
+.--italic {
+  font-style: italic;
+}
+
+.br {
+  display: block;
+}
+.no-scroll {
+  overflow: hidden;
+}

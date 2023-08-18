@@ -1,0 +1,15 @@
+//section fifth
+.fifth {
+  padding: 60rem 0;
+  &__description {
+    padding: 120rem 110rem;
+    background-color: $--green;
+    color: $--grey;
+  }
+  &__title {
+    font: $fifth-title;
+  }
+  &__link {
+    margin-top: 24rem;
+  }
+}
