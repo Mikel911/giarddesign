@@ -1,9 +1,11 @@
 //header
 .header {
   padding: 25rem 10rem;
+
   &__logo {
     cursor: pointer;
   }
+
   //hamburger menu
   &__hamb {
     width: 40rem;
@@ -27,6 +29,7 @@
     top: 30rem;
   }
 }
+
 //nav
 .nav {
   gap: 48rem;
@@ -34,9 +37,19 @@
   &__link {
     color: $--black;
     font: $nav-font;
-    &:hover {
-      text-decoration: underline;
-      color: $--green;
+    &::after {
+      content: "";
+      height: 1rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      background-color: currentColor;
+      transition: width .6s ease;
+    }
+    &:hover::after, {
+      left: 0;
+      width: 100%;
     }
   }
   &__item {
@@ -45,6 +58,7 @@
       transform: scaleY(1);
     }
   }
+
   //drop-down menu
   &__item:hover .nav__drop-down {
     max-height: 2000rem;
@@ -66,6 +80,7 @@
   &__drop-down .nav__item {
     padding: 0 10rem;
   }
+
   //input search
   &__input-search{
     height: 50rem;
@@ -80,6 +95,7 @@
   &__input-search::placeholder{
     color: $--black;
   }
+
   &__btn-search{
     width: 50rem;
     height: 50rem;
@@ -107,7 +123,7 @@
 
 .link--arrow {
   transform: scaleY(-1);
-  transition: transform 0.6s;
+  transition: transform .6s;
 }
 
 
@@ -118,6 +134,7 @@
       display: block;
     }
   }
+
   .navbar.active .navbar-collapse {
     display: block;
   }
@@ -139,10 +156,10 @@
   .navbar.active .header__hamb-line--top {
     transform: rotate(45deg) translate(6rem, 6rem);
   }
-
   .navbar.active .header__hamb-line--bottom {
     transform: rotate(135deg) translate(-8rem, 7rem);
   }
+
   .nav__drop-down {
     position: static;
     height: 0;

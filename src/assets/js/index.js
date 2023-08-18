@@ -1,28 +1,37 @@
+/**
+ * querySelectors
+ */
 const menuButton = document.querySelector('.header__hamb')
 const navbar = document.querySelector('.navbar')
 const body = document.querySelector('body')
 const btnGallery = document.querySelector('.fourth__link')
 const gallery = document.querySelector('.fourth__gallery')
+const loadContainer = document.querySelector('.loader-wrapper')
+const cards = document.querySelectorAll('.second__card')
 
-
-function hambMenu () {
-    document.querySelector('.navbar').classList.toggle('active');
-    if (navbar.classList.contains('active')) {
-        body.classList.add('no-scroll');
-    } else {
-        body.classList.remove('no-scroll');
-    }
+/**
+ * hamburger menu
+ * block our body if we have menu active
+ */
+function hamburgerMenu () {
+    navbar.classList.toggle('active')
+    navbar.classList.contains('active') ? body.classList.add('no-scroll') : body.classList.remove('no-scroll');
 }
 
-document.addEventListener('click', function (e){
-    if(e.target.classList.contains('gallery-img')){
-        const src = e.target.getAttribute('src')
-        document.querySelector('.modal-img').src = src
-        const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'))
-        myModal.show()
-    }
-})
+/**
+ * function click card
+ */
+function clickCard () {
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            location.reload()
+        })
+    })
+}
 
+/**
+ *masonry grid gallery
+ */
 window.onload = () => {
     const grid = document.querySelector('.grid')
     const masonry = new Masonry(grid, {
@@ -31,15 +40,46 @@ window.onload = () => {
         itemSelector: '.grid-item',
         originBottom: false,
         percentPosition: true
-
-    });
+    })
 }
 
-menuButton.addEventListener('click', hambMenu)
+/**
+ * gallery modal window
+ */
+document.addEventListener('click', function (event){
+    if (!event.target.classList.contains('gallery-img')) {
+        return;
+    }
+    const src = event.target.getAttribute('src')
+    document.querySelector('.modal-img').src = src
+    const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'))
+    myModal.show()
+})
 
+/**
+ * block body if we have preloader
+ */
+window.addEventListener('DOMContentLoaded', function (event) {
+    body.classList.add('no-scroll')
+    setTimeout(function() {
+        body.classList.remove('no-scroll')
+        loadContainer.style.display = 'none'
+    }, 2400)
+})
+
+/**
+ * event click Hamburger menu
+ */
+menuButton.addEventListener('click', hamburgerMenu)
+
+/**
+ * event to hide gradient and open gallery
+ */
 btnGallery.addEventListener('click', () => {
     gallery.classList.toggle('active')
 })
 
-
-
+/**
+ * run our function click card
+ */
+clickCard ()

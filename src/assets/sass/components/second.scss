@@ -1,12 +1,26 @@
+//second section
 .second {
   padding: 120rem 10rem 160rem;
   background-color: $--grey;
+
+  &__border {
+    height: 31rem;
+    background-color: #D9D9D9;
+  }
+  &__line {
+    margin: 96rem auto;
+    height: 2rem;
+    background-color: #D9D9D9;
+    max-width: 761rem;
+  }
+
   &__sub-title {
     color: $--green;
   }
   &__text {
     margin-top: 32rem;
   }
+
   &__row {
     margin-top: 96rem;
     gap: 64rem;
@@ -46,6 +60,9 @@
 @media (max-width: 991.98px) {
   .second {
     padding: 40rem 0;
+    &__line {
+      margin: 48rem auto;
+    }
     &__description {
       display: flex;
       align-items: center;
@@ -55,6 +72,19 @@
     }
     &__row {
       gap: 24rem;
+      margin-top: 48rem;
+    }
+    &__card {
+      padding: 32rem;
+    }
+    &__card-title {
+      margin-top: 17rem;
+    }
+    &__card-text {
+      font: 400 12rem/18rem "Inter", sans-serif;
+    }
+    &__card-link {
+      margin-top: 23rem;
     }
   }
 }
