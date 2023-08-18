@@ -47,7 +47,7 @@
       background-color: currentColor;
       transition: width .6s ease;
     }
-    &:hover::after, {
+    &:hover:after, {
       left: 0;
       width: 100%;
     }
@@ -60,10 +60,6 @@
   }
 
   //drop-down menu
-  &__item:hover .nav__drop-down {
-    max-height: 2000rem;
-    transition: all .5s;
-  }
   &__drop-down {
     position: absolute;
     top: 30rem;
@@ -80,14 +76,18 @@
   &__drop-down .nav__item {
     padding: 0 10rem;
   }
+  &__item:hover .nav__drop-down {
+    max-height: 2000rem;
+    transition: all .5s;
+  }
 
   //input search
   &__input-search{
     height: 50rem;
     width: 1rem;
     border-style: none;
-    font-size: 18px;
-    letter-spacing: 2px;
+    font-size: 18rem;
+    letter-spacing: 2rem;
     outline: none;
     transition: all .5s ease-in-out;
     padding-right: 40rem;
