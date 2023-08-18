@@ -1,13 +1,14 @@
 /**
  * querySelectors
  */
+const body = document.querySelector('body')
 const menuButton = document.querySelector('.header__hamb')
 const navbar = document.querySelector('.navbar')
-const body = document.querySelector('body')
 const btnGallery = document.querySelector('.fourth__link')
 const gallery = document.querySelector('.fourth__gallery')
 const loadContainer = document.querySelector('.loader-wrapper')
 const cards = document.querySelectorAll('.second__card')
+const grid = document.querySelector('.grid')
 
 /**
  * hamburger menu
@@ -15,7 +16,7 @@ const cards = document.querySelectorAll('.second__card')
  */
 function hamburgerMenu () {
     navbar.classList.toggle('active')
-    navbar.classList.contains('active') ? body.classList.add('no-scroll') : body.classList.remove('no-scroll');
+    navbar.classList.contains('active') ? body.classList.add('no-scroll') : body.classList.remove('no-scroll')
 }
 
 /**
@@ -33,7 +34,6 @@ function clickCard () {
  *masonry grid gallery
  */
 window.onload = () => {
-    const grid = document.querySelector('.grid')
     const masonry = new Masonry(grid, {
         columnWidth: '.grid-sizer',
         gutter: '.gutter-sizer',
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(function() {
         body.classList.remove('no-scroll')
         loadContainer.style.display = 'none'
-    }, 2400)
+    }, 5000)
 })
 
 /**
