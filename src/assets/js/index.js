@@ -43,6 +43,7 @@ window.onload = () => {
     })
 }
 
+
 /**
  * gallery modal window
  */
@@ -64,7 +65,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     setTimeout(function() {
         body.classList.remove('no-scroll')
         loadContainer.style.display = 'none'
-    }, 5000)
+    }, 2500)
 })
 
 /**

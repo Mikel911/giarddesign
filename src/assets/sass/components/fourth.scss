@@ -58,7 +58,7 @@
 }
 .gutter-sizer { width: 2%; }
 
-@media (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
   .fourth {
     padding: 40rem 0;
     &__gallery {
@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 576.98px) {
+@include media-breakpoint-down(sm) {
   .grid-sizer,
   .grid-item {
     width: 100%;

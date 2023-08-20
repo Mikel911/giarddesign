@@ -51,6 +51,7 @@ body {
   background-color: $--grey;
 }
 .--italic {
+  font: $title-italic;
   font-style: italic;
 }
 .br {
@@ -60,7 +61,7 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
   body {
     font: 400 14rem/18rem 'Inter', sans-serif;
   }
@@ -88,7 +89,7 @@ body {
   }
 }
 
-@media (max-width: 575.98px) {
+@include media-breakpoint-down(sm) {
   body {
     font: 400 12rem/16rem 'Inter', sans-serif;
   }
@@ -97,5 +98,8 @@ body {
   }
   .section-title {
     font: 400 26rem/32rem "Montserrat", sans-serif;;
+  }
+  .--italic {
+    font: 400 26rem/32rem "Inter", sans-serif;
   }
 }

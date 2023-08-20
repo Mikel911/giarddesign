@@ -6,6 +6,9 @@
   &__description{
     padding: 135rem 0 135rem 96rem;
   }
+  &__title {
+    max-width: 250rem;
+  }
   &__img {
     position: absolute;
     left: 0;
@@ -16,6 +19,7 @@
   }
   &__text {
     margin-top: 40rem;
+    max-width: 500rem;
     letter-spacing: -0.16px;
   }
   &__link {
@@ -25,7 +29,7 @@
   }
 }
 
-@media (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
   .third {
     &__description {
       padding: 40rem 0;

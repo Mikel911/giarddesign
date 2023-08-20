@@ -10,6 +10,9 @@
     justify-content: center;
     gap: 44rem;
   }
+  &__title {
+    max-width: 550rem;
+  }
   &__img {
     position: absolute;
     width: 50%;
@@ -19,6 +22,7 @@
   }
   &__text {
     margin-top: 44rem;
+    max-width: 490rem;
   }
 
   &__links-box {
@@ -43,7 +47,7 @@
   transform: translate(-192rem, -96rem);
 }
 
-@media (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
   .hero{
     &__content {
       padding: 40rem 0;
@@ -70,7 +74,7 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@include media-breakpoint-down(sm) {
   .hero__content {
     padding: 20rem 0;
     gap: 15rem;

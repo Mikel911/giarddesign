@@ -37,7 +37,7 @@ function html() {
     .pipe(mode.production(htmlmin({ collapseWhitespace: true, removeComments: true, }))) //видаляє коментарі при Білд сборці
     .pipe(dest(localServer.out))
     .pipe(connect.reload());
-};
+}
 
 function file() {
   return src([`${localServer.src}/*.*`, `!${localServer.src}/index.html`])
@@ -46,7 +46,7 @@ function file() {
       basepath: '@file'
     }))
     .pipe(dest(localServer.out))
-};
+}
 
 
 //функція яка всі css файли додає в 1 і компілює scss в css і сжимає його
@@ -61,7 +61,7 @@ function css() {
     .pipe(concat('bundle.min.css'))
     .pipe(dest(`${localServer.out}`))
     .pipe(connect.reload());
-};
+}
 
 //функція яка додає JS файл в папку dist/ і робить всі плюшки ES6 плюс сжимає файл
 function js() {
@@ -91,7 +91,7 @@ function img() {
     .pipe(changed(`${localServer.out}img/`))
     .pipe(imagemin())
     .pipe(dest(`${localServer.out}/img`))
-};
+}
 
 //Ватч функція яка слідкуя за зміною в файлах в лайв режимі
 function gulpWatch() {
@@ -112,7 +112,6 @@ function server() {
     livereload: true,
   })
 }
-
 
 exports.dev = parallel(clean, server, html, css, js, img, file, gulpWatch); //тут послідовність функцій які запускаются, наприклад ви можете додати щоб автоматом браузер відкривався openLocal
 
